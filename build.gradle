@@ -14,6 +14,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     // https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver
     implementation group: 'org.mongodb', name: 'mongo-java-driver', version: '3.12.8'
+    compile 'com.fazecast:jSerialComm:[2.0.0,3.0.0)'
 }
 
 test {

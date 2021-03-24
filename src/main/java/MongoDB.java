@@ -1,12 +1,15 @@
+import com.fazecast.jSerialComm.SerialPort;
 import com.mongodb.*;
 
 public class MongoDB {
+
 
     public static MongoClient mongoClient;
     public static DB database;
     public static DBCollection dbCollection;
 
     public static void main(String[] args) {
+
         mongoClient = new MongoClient(new MongoClientURI("mongodb://localhost:27017"));
         database = mongoClient.getDB("dataRateDB");
         dbCollection= database.getCollection("collDB");
@@ -23,7 +26,8 @@ public class MongoDB {
         // QUERYING
         DBObject query = new BasicDBObject();
         DBCursor cursor = dbCollection.find(query);
-        System.out.println(cursor.one());
+        System.out.println(cursor.next());
+
     }
 
     public static DBObject convert(obj obj){
