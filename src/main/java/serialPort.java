@@ -3,8 +3,10 @@ import java.util.Scanner;
 import com.fazecast.jSerialComm.SerialPort;
 import com.fazecast.jSerialComm.SerialPortDataListener;
 import com.fazecast.jSerialComm.SerialPortEvent;
+import com.mongodb.DBCollection;
+import com.mongodb.DBObject;
 
-public class serialPort {
+public class serialPort{
 
     SerialPort activePort;
     SerialPort[] ports = SerialPort.getCommPorts();
@@ -30,9 +32,12 @@ public class serialPort {
                 int size = event.getSerialPort().bytesAvailable();
                 byte[] buffer = new byte[size];
                 event.getSerialPort().readBytes(buffer, size);
-                for(byte b:buffer)
+                for(byte b:buffer){
                     System.out.print((char)b);
+                    
+                }
             }
+            
             @Override
             public int getListeningEvents() {
                 return SerialPort.LISTENING_EVENT_DATA_AVAILABLE;
@@ -48,6 +53,11 @@ public class serialPort {
         setPort(p);
         reader.close();
     }
+
+    // cek
+    // asdsadas
+    //a s
+
 
     public static void main(String[] args) {
         serialPort mainClass = new serialPort();

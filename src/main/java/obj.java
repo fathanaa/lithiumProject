@@ -3,9 +3,7 @@ public class obj {
     private int timer = 0;
     private int xp = 1;
 
-    public obj(){
-
-    }
+    public obj(){}
 
     public int getTimer() {
         return timer;
